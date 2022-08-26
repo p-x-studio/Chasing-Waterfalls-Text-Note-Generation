@@ -1,0 +1,15 @@
+apex==0.9.10dev
+boto3==1.21.32
+fastai==1.0.61
+fastprogress==1.0.2
+Flask==1.1.4
+flask_cors==3.0.10
+midi2audio==0.1.1
+music21==5.5.0
+openai==0.16.0
+Pebble==4.6.3
+pronouncing==0.2.0
+protobuf==3.20.0
+PyYAML==6.0
+torch==1.10.0
+pretty_midi==0.2.9

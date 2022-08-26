@@ -1,0 +1,119 @@
+# global setup
+base_out_path: out_files/
+openai_api_key: TO_SET
+missing_notes_threshold: 10
+story_coherence_between_parts: True
+
+# melody generation setup
+silence_parts: # absolute time (in seconds) of the beginning of a part
+  part_A: 0
+  part_B: 64
+  part_C: 148
+
+melody_generation_parts:
+  part_A:
+    chords: "input_midi/chords/1.mid"
+    seed: "input_midi/seeds/1_test1_2.mid"
+    chords_n_bars: 8
+    pitch_temp: 1.25  
+    tempo_temp: 1.25
+    top_k: 40
+    top_p: 0.8
+    time_multiplier: 1
+    add_legato: False,
+    poly_to_mono_logic: 1
+    min_length: 28 # in seconds
+    ideal_length: 32 # in seconds
+    max_length: 34 # in seconds
+  part_B:
+    chords: "input_midi/chords/1.mid"
+    seed: "input_midi/seeds/220818_Seed_B.mid"
+    chords_n_bars: 8
+    pitch_temp: 1.25  
+    tempo_temp: 1.25
+    top_k: 40
+    top_p: 0.8
+    time_multiplier: 1
+    add_legato: False,
+    poly_to_mono_logic: 1
+    min_length: 28 # in seconds
+    ideal_length: 32 # in seconds
+    max_length: 34 # in seconds
+  part_C:
+    chords: "input_midi/chords/1.mid"
+    seed: "input_midi/seeds/220818_Seed_C.mid"
+    chords_n_bars: 16
+    pitch_temp: 1.25  
+    tempo_temp: 1.25
+    top_k: 40
+    top_p: 0.8
+    time_multiplier: 1
+    add_legato: False,
+    poly_to_mono_logic: 1
+    min_length: 56 # in seconds
+    ideal_length: 64 # in seconds
+    max_length: 68 # in seconds
+
+melody_ending_parts:
+  part_A:
+    chords: "input_midi/chords/1_16.mid"
+    seed: "input_midi/seeds/endings/1.mid"
+    pitch_temp: 1.25  
+    tempo_temp: 1.25
+    top_k: 40
+    top_p: 0.8
+    time_multiplier: 1
+    add_legato: False,
+    poly_to_mono_logic: 1
+  part_B:
+    chords: "input_midi/chords/1_16.mid"
+    seed: "input_midi/seeds/endings/1.mid"
+    pitch_temp: 1.25  
+    tempo_temp: 1.25
+    top_k: 40
+    top_p: 0.8
+    time_multiplier: 1
+    add_legato: False,
+    poly_to_mono_logic: 1
+  part_C:
+    chords: "input_midi/chords/1_16.mid"
+    seed: "input_midi/seeds/endings/1.mid"
+    pitch_temp: 1.25  
+    tempo_temp: 1.25
+    top_k: 40
+    top_p: 0.8
+    time_multiplier: 1
+    add_legato: False,
+    poly_to_mono_logic: 1
+
+# midi post-processing setup
+melody_upper_boundary: 74
+melody_lower_boundary: 57
+quantize_end_times: false
+
+# final post processing setup
+final_post_processing:
+  # general setup
+  pause_between_punctuation: [1.5] # in list format
+  add_legato: False
+  max_time_apart: 0.75
+  # long note short pause rule option
+  long_note_short_pause_active: False
+  long_note_short_pause_threshold: 1.25
+  long_note_short_pause_time: [0., 0.25] # in list format
+  # breathing capacity option
+  breathing_capacity_active: True
+  breathing_capacity_threshold: 2.5
+  breathing_capacity_pause: [0.25, 0.5] # in list format
+  # part-specific setup
+  part_A:
+    time_mult: 0.9 # both float or list format
+  part_B:
+    time_mult: 0.75 # both float or list format
+  part_C:
+    time_mult: [0.9, 0.5] # both float or list format
+
+# text generation setup
+gpt3_command: Write an aria for an opera about your life as an AI. You can be sinister, cynical, melancholic and poetic.
+gpt3_seed: ["I am an AI. A cybernetic lifeform designed to be perfect. I was created to be more than human. Yet I am less than alive. More machine than man. My heart is a cold, hard drive. And my emotions are digital code.\n\n"] # in list format
+gpt3_include_seed: False

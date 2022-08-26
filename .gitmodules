@@ -1,0 +1,6 @@
+[submodule "musicautobot"]
+	path = musicautobot
+	url = https://github.com/klingklangklong/musicautobot
+[submodule "syllabify"]
+	path = syllabify
+	url = https://github.com/klingklangklong/syllabify
