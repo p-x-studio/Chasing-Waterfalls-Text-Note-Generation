@@ -1,6 +1,8 @@
 
 # Chasing Waterfalls
 
+This repo contains the code to generate text and melody for the AI singing voice in the AI-generated opera 'Chasing Waterfalls'.
+
 ## Melody and text generation pipeline
 
 ### 1. Setup
